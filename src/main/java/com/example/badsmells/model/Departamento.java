@@ -1,6 +1,7 @@
 package com.example.badsmells.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -10,7 +11,7 @@ public class Departamento {
 	private Integer id;
 	private String nomeDep;
 	private String telefone;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Empresa empresa;
 
 	public String getNomeDep() {
